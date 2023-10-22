@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>caculator</h1> <hr>
+        <input type="number" id="n1" placeholder="Nhập số">
+        <select id="sl">
+            <option></option>
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+            <option>^</option>
+        </select>
+        <input type="number" id="n2" placeholder="Nhập số">
+        <button id="sm" onclick="caculator()">
+            =
+        </button>
+        <input type="text" id="result" placeholder="Kết quả">
+    </div>
+    <script>
+        caculator = () => {
+            var n1 = document.getElementById("n1").value;
+            var n2 = document.getElementById("n2").value;
+            var sl = document.getElementById("sl").value;
+            var result = 0;
+            if (sl == "+") {
+                result = parseFloat(n1) + parseFloat(n2);
+            } else if (sl == "-") {
+                result = parseFloat(n1) - parseFloat(n2);
+            } else if (sl == "*") {
+                result = parseFloat(n1) * parseFloat(n2);
+            } else if (sl == "/") {
+                result = parseFloat(n1) / parseFloat(n2);
+            }
+            else if (sl == "^") {
+                result = Math.pow(parseFloat(n1), parseFloat(n2));
+            }
+            if (n1 == "" || n2 == "") {
+                alert("Input không được để trống");
+            }
+            else if (isNaN(n1) || isNaN(n2)) {
+                alert("Input phải là số");
+            }
+            else if (sl == "/" && n2 == 0) {
+                alert("Không thể chia cho 0");
+            }
+            else if(sl == ""){
+                alert("Vui lòng chọn phép tính");
+            }
+            else {
+                document.getElementById("result").value = result;
+            }
+        }
+    </script>
+</body>
+
+</html>

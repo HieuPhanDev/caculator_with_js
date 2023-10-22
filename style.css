@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    background-color: #e6e6e6;
+    padding: 40px;
+    width: max-content;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+hr {
+    margin: 15px 0px;
+}
+button{
+    padding: 0px 3px;
+}
+input{
+    width: 120px;
+}
